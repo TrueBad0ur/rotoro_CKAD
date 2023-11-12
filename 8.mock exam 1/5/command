@@ -1,0 +1,1 @@
+Образ для replicaset должен быть busybox вместо busybox2004alpha. Используй kubectl edit rs exam-rs, чтобы поправить image. После удали все PODs, чтобы новые образы заменили старые.

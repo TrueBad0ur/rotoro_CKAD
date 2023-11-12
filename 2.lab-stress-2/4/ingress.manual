@@ -1,0 +1,8 @@
+Создай единый ingress resource с названием ingress-multi-routing. Этот ресурс должен маршрутизировать трафик HTTP на несколько hostnames, указанных далее:
+
+    Служба meet-service должна быть доступна на http://meet.rotoro-mall.com:30069/conference
+
+    Служба store-service должна быть доступна на http://store.rotoro-mall.com:30069/shop
+
+
+Порт 30069 используется для Ingress Controller

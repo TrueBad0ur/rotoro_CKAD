@@ -1,0 +1,1 @@
+Создай deployment redis, используя образ redis:alpine с 1 репликой и меткой app=redis. Выставь это через службу ClusterIP с названием redis на порт 6379. Создай новый Ingress Type NetworkPolicy с названием redis-access, которая позволит только PODs с label access=redis иметь доступ к этому deployment.

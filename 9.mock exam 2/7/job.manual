@@ -1,0 +1,6 @@
+Создай job с названием whalesay с образом docker/whalesay и командой "cowsay I will pass the CKAD exam!".
+completions: 10
+backoffLimit: 6
+restartPolicy: Never
+
+Эта простая job запускает популярную игру cowsay, которая модифицирована под docker..

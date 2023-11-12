@@ -1,0 +1,3 @@
+Примени label app_type=omega на ноду controlplane. Создай новый deployment с названием omega-apps с образом image: nginx и replicas: 3. Установи Node Affinity для deployment, чтобы PODs назначались только на controlplane.
+
+NodeAffinity: requiredDuringSchedulingIgnoredDuringExecution

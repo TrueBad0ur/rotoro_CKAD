@@ -1,0 +1,1 @@
+kubectl run messaging --image=redis:alpine -l type=in-memory

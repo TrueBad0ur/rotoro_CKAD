@@ -1,0 +1,1 @@
+Создай deployment с названием ckad-webapp с image nginx, label tier:frontend и 2 репликами. Выставь deployment как службу NodePort с названием front-end-service, port: 80 и NodePort: 30083

@@ -1,0 +1,1 @@
+Создай новый deployment с названием httpd-frontend с 3 репликами, используя образ httpd:2.4-alpine

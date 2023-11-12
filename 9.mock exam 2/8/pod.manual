@@ -1,0 +1,13 @@
+Создай POD с названием multi-pod с двумя контейнерами.
+Контейнер 1:
+name: jupiter, image: nginx
+Контейнер 2:
+name: callisto, image: busybox
+command: sleep 4800
+
+Переменные окружения:
+Контейнер 1:
+type: planet
+
+Контейнер 2:
+type: moon

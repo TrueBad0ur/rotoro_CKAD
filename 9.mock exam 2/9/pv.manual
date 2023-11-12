@@ -1,0 +1,1 @@
+Создай PersistentVolume с названием my-volume, размером: 50MiB, reclaim policy: retain, access mode: ReadWriteMany и hostPath: /opt/data

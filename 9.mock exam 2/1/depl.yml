@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    tier: frontend
+    app: ckad-webapp
+  name: ckad-webapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ckad-webapp
+  template:
+    metadata:
+      labels:
+        app: ckad-webapp
+    spec:
+      containers:
+      - image: nginx
+        name: nginx

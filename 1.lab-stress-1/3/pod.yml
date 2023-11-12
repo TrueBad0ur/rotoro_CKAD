@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mars2024
+
+---
+
+apiVersion: v1
+data:
+  TIME_FREQ: "10"
+kind: ConfigMap
+metadata:
+  name: time-config
+  namespace: mars2024
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: time-check
+  name: time-check
+  namespace: mars2024
+spec:
+  volumes:
+  - name: log-volume
+    emptyDir: {}
+  containers:
+  - image: busybox
+    name: time-check
+    env:
+    - name: TIME_FREQ
+      valueFrom:
+            configMapKeyRef:
+              name: time-config
+              key: TIME_FREQ
+    volumeMounts:
+    - mountPath: /opt/time
+      name: log-volume
+    command:
+    - "/bin/sh"
+    - "-c"
+    - "while true; do date; sleep $TIME_FREQ;done > /opt/time/time-check.log"
+    

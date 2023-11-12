@@ -1,0 +1,1 @@
+kubectl create secret generic db-secret-qddpc --from-literal=DB_Host=sql01 --from-literal=DB_User=root --from-literal=DB_Password=reallyStrongPass

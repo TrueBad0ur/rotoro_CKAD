@@ -1,0 +1,5 @@
+Создай POD с названием secret-busybox в пространстве dev8080 с помощью образа busybox. Контейнер должен называться secret и должен sleep в течение 3600 секунд.
+
+В контейнер нужно смонтировать read-only secret volume с названием secret-volume по пути /etc/secret-volume. Secret, который будет монтироваться уже создан и называется secret-key.
+
+Убедись, что POD назначен на controlplane и на никакую другую ноду кластера.

@@ -1,0 +1,5 @@
+Создай Persistent Volume с названием log-volume. Он должен использовать storage class с названием manual. Должен быть использован режим доступа RWX и размер 1Gi. Этот том должен использовать hostPath /opt/volume/nginx.
+
+Далее, создай PVC с названием log-claim, которая запрашивает минимум 200Mi для хранения. Эта PVC должна связаться с log-volume.
+
+Смонтируй это в POD по имени logger в размещение /var/www/nginx. Этот POD должен использовать образ nginx:alpine.

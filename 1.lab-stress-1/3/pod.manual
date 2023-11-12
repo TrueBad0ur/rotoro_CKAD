@@ -1,0 +1,5 @@
+Создай POD с названием time-check в пространстве mars2024. Этот POD должен запускать контейнер с названием time-check, который будет использовать образ busybox.
+
+    Создай ConfigMap с названием time-config и данными TIME_FREQ=10 в том же namespace.
+    Контейнер time-check должен выполнять команду: while true; do date; sleep $TIME_FREQ;done и записывать результат в размещение /opt/time/time-check.log.
+    Путь /opt/time в POD следует смонтировать в том, который будет существовать в течение всего срока службы этого POD.

@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ckad-webapp
+    tier: frontend
+  name: front-end-service
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+    nodePort: 30083
+  selector:
+    app: ckad-webapp
+  type: NodePort
+status:
+  loadBalancer: {}
+
+# kubectl expose deployment ckad-webapp --name front-end-service --type NodePort --port 80 --dry-run=client -oyaml > front-end-service.yaml

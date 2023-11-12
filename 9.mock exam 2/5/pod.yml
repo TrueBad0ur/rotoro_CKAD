@@ -1,0 +1,11 @@
+
+
+# kubectl get po pod-with-rprobe -oyaml > pod.yaml
+
+  containers:
+  - readinessProbe:
+      httpGet:
+        path: /ready
+        port: 8080
+
+kubectl replace -f pod.yaml --force --grace-period=0

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: wordpress
+spec:
+  containers:
+  - image: busybox
+    name: apache
+    command:
+    - sleep
+    - "3600"
+  - image: nginx
+    name: mysql
+    env:
+    - name: NGINX_PORT
+      value: "8080"

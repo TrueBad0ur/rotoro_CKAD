@@ -1,0 +1,1 @@
+Создай service messaging-service, чтобы выставить deployment redis в пространстве education namespace на порт кластера 6379.

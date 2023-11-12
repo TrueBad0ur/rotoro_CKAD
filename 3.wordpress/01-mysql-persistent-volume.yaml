@@ -1,0 +1,18 @@
+# Сначала создаем диск для БД
+# Имей в виду, что использование HostPath не является хорошей практикой!
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-persistent-storage
+  labels:
+    app: wordpress
+    tier: mysql
+spec:
+  capacity:
+    storage: 300Mi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/mysql"
+    type: DirectoryOrCreate

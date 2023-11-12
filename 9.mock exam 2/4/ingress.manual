@@ -1,0 +1,5 @@
+Создай новый Ingress Resource для service: my-video-service, чтобы приложение было доступно с URL: http://ckad-preparation-course.com:30069/video.
+
+Создай ingress resource с host: ckad-preparation-course.com
+path: /video
+Когда установлено, сделай curl тест URL с ноды, он должен быть успешен / HTTP 200

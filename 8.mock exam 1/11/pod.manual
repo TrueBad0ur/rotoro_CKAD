@@ -1,0 +1,3 @@
+Экспотируй логи POD shop-app-middleware в файл /opt/outputs/shop-app-middleware.logs
+
+Это в другом namespace. Определи сначала, что за пространство.

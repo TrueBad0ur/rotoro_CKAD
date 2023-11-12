@@ -1,0 +1,4 @@
+Мы развернули новый POD с названием pod-with-rprobe. Этот POD имеет инициализационную задержку, прежде чем он станет Ready. Обнови этот созданный POD pod-with-rprobe, установив readinessProbe, приведенную в спецификации
+
+httpGet path: /ready
+httpGet port: 8080

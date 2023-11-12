@@ -1,0 +1,1 @@
+kubectl logs dev-ecommerce-java-13dg6 -c log-x | grep WARN > /opt/ecommerce-java_log.txt

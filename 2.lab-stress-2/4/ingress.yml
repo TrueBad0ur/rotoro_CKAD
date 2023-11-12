@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  creationTimestamp: null
+  name: ingress-multi-routing
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: / 
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: meet.rotoro-mall.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: meet-service
+            port:
+              number: 8080
+        path: /conference
+        pathType: Prefix
+  - host: store.rotoro-mall.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: store-service
+            port:
+              number: 8080
+        path: /shop
+        pathType: Prefix
+status:
+  loadBalancer: {}

@@ -1,0 +1,15 @@
+# Займём диск веб-сервера
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wordpress-persistent-storage
+  labels:
+    app: wordpress
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 300Mi
+  volumeName: "wordpress-persistent-storage"

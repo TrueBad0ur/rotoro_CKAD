@@ -1,0 +1,4 @@
+Добавь taint на узел node01 кластера. Используй приведенную спецификацию:
+
+key: app_type, value: sigma и effect: NoSchedule
+Создай POD с названием sigma, image: redis с toleration на node01

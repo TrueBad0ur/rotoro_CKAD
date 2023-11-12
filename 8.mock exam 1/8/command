@@ -1,0 +1,1 @@
+kubectl create configmap cm-0909854 --from-literal=DB_NAME=SQL3322 --from-literal=DB_HOST=sql-pool.mycompany.com --from-literal=DB_PORT=3306

@@ -1,0 +1,1 @@
+POD с названием dev-ecommerce-java-13dg6 был развернут в default namespace. Проверь логи контейнера log-x и перенаправь warnings в файл /opt/ecommerce-java_log.txt на узле controlplane

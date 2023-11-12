@@ -1,0 +1,2 @@
+kubectl create ingress ingress --rule="ckad-preparation-course.com/video*=my-video-service:8080" --dry-run=client -oyaml > ingress.yaml
+

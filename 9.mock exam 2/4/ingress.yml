@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  creationTimestamp: null
+  name: ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: / 
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: ckad-preparation-course.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: my-video-service
+            port:
+              number: 8080
+        path: /video
+        pathType: Prefix
+status:
+  loadBalancer: {}
+
+# kubectl create ingress ingress --rule="ckad-preparation-course.com/video*=my-video-service:8080" --dry-run=client -oyaml > ingress.yaml
