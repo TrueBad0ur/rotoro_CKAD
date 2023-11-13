@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: logger1
+  namespace: test
+spec:
+  containers:
+  - image: nginx:alpine
+    name: logger1
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: logger2
+  namespace: test
+spec:
+  containers:
+  - image: nginx:alpine
+    name: logger2
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: logger3
+  namespace: test
+spec:
+  containers:
+  - image: nginx:alpine
+    name: logger3
