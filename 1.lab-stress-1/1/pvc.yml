@@ -5,7 +5,8 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany
+  volumeMode: Filesystem
   resources:
     requests:
       storage: 200Mi
-  storageClassName: manual
+  storageClassName: standard

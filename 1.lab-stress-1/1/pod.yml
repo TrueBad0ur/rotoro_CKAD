@@ -3,7 +3,6 @@ kind: Pod
 metadata:
   labels:
     run: logger
-# POD name
   name: logger
 spec:
   containers:
