@@ -1,7 +1,15 @@
 apiVersion: v1
-kind: ConfigMap
+kind: PersistentVolumeClaim
 metadata:
-  name: redis-config
+  name: redis-claim
+spec:
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 200Mi
+  storageClassName: standard
 
 ---
 
@@ -20,22 +28,18 @@ spec:
       labels:
         app: redis
     spec:
-      volumes:
-      - name: data
-        emptyDir: {}
-      - name: config
-        configMap:
-          name: redis-config
       containers:
       - image: redis:alpine
         name: redis
-        volumeMounts:
-        - mountPath: /redis-master-data
-          name: data
-        - mountPath: /redis-master
-          name: config
         ports:
         - containerPort: 6379
+        volumeMounts:
+        - mountPath: /data
+          name: redis-data
         resources:
           requests:
             cpu: "0.2"
+      volumes:
+        - name: redis-data
+          persistentVolumeClaim:
+            claimName: redis-claim
