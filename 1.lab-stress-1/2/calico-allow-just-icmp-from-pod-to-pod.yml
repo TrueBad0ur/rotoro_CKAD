@@ -1,0 +1,18 @@
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: default-deny
+  namespace: test
+spec:
+  selector: label == 'logger1'
+  types:
+    - Ingress
+  ingress:
+    - action: Allow
+      protocol: ICMP
+      source:
+        selector: label == 'logger2'
+      icmp:
+        type: 8 #Ping request
+
+# allow incoming icmp traffic from logger2 to logger1

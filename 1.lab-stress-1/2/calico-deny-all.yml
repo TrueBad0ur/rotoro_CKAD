@@ -1,0 +1,11 @@
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: calico-deny-all
+  namespace: test
+spec:
+  order: 20
+  selector: all()
+  types:
+    - Ingress
+    - Egress

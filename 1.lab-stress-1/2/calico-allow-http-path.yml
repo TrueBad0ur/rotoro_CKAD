@@ -1,0 +1,24 @@
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+#kind: GlobalNetworkPolicy
+metadata:
+  name: calico-allow-http-path
+  namespace: test
+spec:
+  #order: 10
+  selector: label == 'logger1'
+  types:
+    - Ingress
+    - Egress
+  selector: all()
+  ingress:
+    - action: Allow
+      http:
+        methods: ['GET']
+        paths:
+          #- exact: '/tmp'
+          - prefix: '/tmp'
+  egress:
+    - action: Allow
+
+# currently doesn't work
