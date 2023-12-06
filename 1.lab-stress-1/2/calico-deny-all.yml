@@ -4,7 +4,7 @@ metadata:
   name: calico-deny-all
   namespace: test
 spec:
-  order: 20
+  order: 10
   selector: all()
   types:
     - Ingress

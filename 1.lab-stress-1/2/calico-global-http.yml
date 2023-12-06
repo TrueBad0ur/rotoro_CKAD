@@ -1,0 +1,13 @@
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: customer
+  namespace: test
+spec:
+  selector: label == 'logger1'
+  ingress:
+    - action: Deny
+      protocol: TCP
+  egress:
+    - action: Deny
+      protocol: TCP

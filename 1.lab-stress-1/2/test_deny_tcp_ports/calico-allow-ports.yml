@@ -1,0 +1,17 @@
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: calico-allow-ports
+  namespace: test
+spec:
+  order: 10
+  selector: label == 'logger1'
+  ingress:
+  - action: Deny
+    protocol: TCP
+    source:
+      selector: label == 'logger2'
+    destination:
+      #ports: ['1:31336', '31338:65535']
+      notPorts:
+        - 31337
