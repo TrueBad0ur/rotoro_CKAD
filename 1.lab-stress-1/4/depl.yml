@@ -1,9 +1,17 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: my-namespace
+
+---
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
     app: nginx-deploy
   name: nginx-deploy
+  namespace: my-namespace
 spec:
   replicas: 4
   selector:
@@ -11,8 +19,8 @@ spec:
       app: nginx-deploy
   strategy:
     rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 2
+      maxSurge: 8
+      maxUnavailable: 0
     type: RollingUpdate
   template:
     metadata:
@@ -24,4 +32,6 @@ spec:
         imagePullPolicy: IfNotPresent
         name: nginx
 # kubectl set image deployment nginx-deploy nginx=nginx:1.17
+# kubectl annotate deployment nginx-deploy kubernetes.io/change-cause="update nginx to 1.22" --overwrite=true
 # kubectl rollout undo deployment nginx-deploy
+# kubectl rollout history deployment nginx-deploy
